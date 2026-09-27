@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+}
+
+#title {
+    text-align: center;
+    margin: 20px;
+}
+
+#main-container {
+    background-color: rgb(179, 223, 223);
+    margin: 20px;
+    border-radius: 7.5px;
+    padding: 10px;
+}
+
+#input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
