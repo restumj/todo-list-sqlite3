@@ -12,10 +12,25 @@
     margin: 20px;
     border-radius: 7.5px;
     padding: 10px;
+    margin: 10px 25%;
 }
 
-#input-section {
+#task-form {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.items {
+    list-style-type: none;
+    background-color: rgb(142, 142, 194);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+ul {
+    padding-left: 0;
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
 }

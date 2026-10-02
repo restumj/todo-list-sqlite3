@@ -4,9 +4,13 @@ import sqlite3
 app = Flask(__name__)
 
 def get_db_connection():
-    db = sqlite3.connect('todo-list.db')
+    db = sqlite3.connect('todo.db')
     db.row_factory = sqlite3.Row
     return db
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/api/tasks', methods=['GET','POST'])
 def handle_tasks():
