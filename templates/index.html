@@ -16,13 +16,18 @@
     <div id="main-container">
         <div id="task-form">
             <input type="text" placeholder="Enter task..." id="task-input" name="task" style="min-width: 50%;">
-            <button type="button" id="add-button">Add</button>
+            <button type="button" id="add-btn">Add</button>
         </div>
         
         <ul id="task-list">
-            <div class="task-items">
-                <div id="circle-status"></div>
-                <li>item1</li>      
+            <div class="task-item" data-id="5">
+                <div class="task-left">
+                    <div class="task-status"></div>
+                    <li>item1</li>
+                </div>
+                <div class="task-right">
+                    <button type="button" class="delete-btn">Delete</button>
+                </div>   
             </div>
         </ul>
     </div>
