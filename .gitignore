@@ -1,5 +1,5 @@
 __pycache__/
 testing/
-.pyc
-.help
-.db
+*.pyc
+*.help
+*.db
