@@ -18,7 +18,11 @@ async function loadTasks() {
             
             // task_left
             li.textContent = task.name;
-            task_status.setAttribute('class','task-status');
+            if (task.status == 0) {
+                task_status.setAttribute('class','task-status-false');
+            } else {
+                task_status.setAttribute('class','task-status-true');
+            }
             task_left.setAttribute('class','task-left');
             task_left.appendChild(task_status);
             task_left.appendChild(li);
@@ -28,6 +32,10 @@ async function loadTasks() {
             delete_btn.setAttribute('class','delete-btn');
             delete_btn.textContent = 'Delete';
             
+            task_item.addEventListener('click', async () => {
+                await changeStatus(task.id, task.status);
+            });
+
             delete_btn.addEventListener('click', async () => {
                 await deleteTask(task.id);
             });
@@ -81,9 +89,8 @@ addButton.addEventListener('click', async () => {
 
 // delete task
 async function deleteTask(taskId) {
-    const url = `/api/tasks/${taskId}`;
-    
     try {
+        const url = `/api/tasks/${taskId}`;
         const response = await fetch(url, {
             method: 'DELETE'
         });
@@ -95,5 +102,27 @@ async function deleteTask(taskId) {
         loadTasks();
     } catch (error) {
         console.error('Error delete task: ', error);
+    }
+}
+
+// change status
+async function changeStatus(taskId, currentStatus) {
+    try {
+        const url = `api/tasks/${taskId}`;
+        const newStatus = currentStatus === 0 ? 1 : 0;
+        const dataSend = {status: newStatus};
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataSend)
+        });
+
+        if (response.ok) {
+            loadTasks();
+        }
+    } catch (error) {
+        console.error('Failed update task\'s status: ', error);
     }
 }
