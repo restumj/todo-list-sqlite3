@@ -9,8 +9,17 @@
 </head>
 <body>
     <div id="title">
-        <h1>Welcome to To-Do-List</h1>
-        <p>by Restu Manujaya</p>
+        <h1>To-Do List</h1>
+        
+        <p style="text-align: center; margin-top: -10px; margin-bottom: 20px;">
+            Selamat datang, <b>{{ username }}</b>! 
+        </p>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="/logout" style="padding: 5px 10px; background-color: #ff4757; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">
+                Logout
+            </a>
+        </div>
     </div>
     
     <div id="main-container">

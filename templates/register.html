@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - To-Do List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Register</h1>
+    </div>
+    
+    <div id="main-container" style="text-align: center;">
+        <!-- Perhatikan method="POST" dan action="/register" ini -->
+        <form method="POST" action="/register" style="display: flex; flex-direction: column; gap: 10px; max-width: 250px; margin: 0 auto;">
+            <input type="text" name="username" placeholder="Username..." required style="padding: 8px;">
+            <input type="password" name="password" placeholder="Password..." required style="padding: 8px;">
+            <button type="submit" style="padding: 8px; cursor: pointer;">Register</button>
+        </form>
+        
+        <p style="margin-top: 15px;">
+            Already have an account? <a href="/login">Login here</a>
+        </p>
+    </div>
+</body>
+</html>

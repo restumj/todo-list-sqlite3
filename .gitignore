@@ -3,3 +3,4 @@ testing/
 *.pyc
 *.help
 *.db
+test.py
