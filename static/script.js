@@ -22,6 +22,7 @@ async function loadTasks() {
                 task_status.setAttribute('class','task-status-false');
             } else {
                 task_status.setAttribute('class','task-status-true');
+                li.setAttribute('class','task-text-crossed-out')
             }
             task_left.setAttribute('class','task-left');
             task_left.appendChild(task_status);

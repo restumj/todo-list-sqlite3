@@ -61,3 +61,7 @@
     gap: 5px;
     align-items: center;
 }
+
+.task-text-crossed-out {
+    text-decoration: line-through;
+}
